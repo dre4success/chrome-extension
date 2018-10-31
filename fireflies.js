@@ -17,4 +17,5 @@
   let description = document.getElementById('hInySc0');
   let location = document.querySelector('[aria-label="Location"]');
   let guest = document.querySelector('[aria-owns="nngdp149"]');
+
 })();
