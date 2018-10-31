@@ -1,3 +1,13 @@
 {
-  "name": "fireflies.ai"
+  "name": "fireflies.ai",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Transcribe with fireflies.ai",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_icon": "FFicon.svg"
+  },
+  "permissions": ["tabs", "https://calender.google.com/r/eventedit"]
 }
