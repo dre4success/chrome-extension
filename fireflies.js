@@ -9,7 +9,7 @@
   button.style.marginLeft = '200px';
   let text = document.createTextNode('Transcribe with Fireflies.ai');
   button.appendChild(text);
-  button.style.display = 'none'
+  button.style.display = 'none';
 
   // get the div to place the button in
   let parentDiv = document.querySelector('.emaTS');
@@ -41,11 +41,10 @@
     }
   }
   // if there's phone number in description or location
-  if(phoneNumber.length >= 1) {
-    button.style.display = 'block'
-
-    button.addEventListener('click', function () {
-      
-    })
+  if (phoneNumber.length >= 1) {
+    button.style.display = 'block';
+    button.addEventListener('click', function() {
+      //add fred@fireflies.io to guest and submit guest form
+    });
   }
 })();
