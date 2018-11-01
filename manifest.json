@@ -9,5 +9,10 @@
   "browser_action": {
     "default_icon": "FFicon.svg"
   },
-  "permissions": ["tabs", "https://calender.google.com/r/eventedit"]
+  "permissions": [
+    "tabs",
+    "https://calendar.google.com/r/",
+    "https://calendar.google.com/",
+    "https://calendar.google.com/calendar/r/eventedit"
+  ]
 }
