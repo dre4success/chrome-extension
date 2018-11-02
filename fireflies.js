@@ -18,7 +18,30 @@
   setInterval(() => {
     let description = document.getElementById('hInySc0');
     let location = document.querySelector('[aria-label="Location"]');
-    let guest = document.querySelector('[aria-owns="nngdp149"]');
+    if (
+      document.querySelectorAll('.whsOnd.zHQkBf')[3].nextElementSibling
+        .innerText === 'Add guests'
+    ) {
+      /* 
+        Using window object because guest variable is in a setInterval 
+        meaning our function is immediately invoked but setInterval is put
+        on an event loop, so which makes our guest variable undefined at 
+        the button.addEventListener. The window object makes it available
+        at that point
+      */
+      window.__guest__ = document.querySelectorAll('.whsOnd.zHQkBf')[3];
+      document.querySelectorAll(
+        '.whsOnd.zHQkBf'
+      )[3].nextElementSibling.innerText = '';
+    } else if (
+      document.querySelectorAll('.whsOnd.zHQkBf')[1].nextElementSibling
+        .innerText === 'Add guests'
+    ) {
+      window.__guest__ = document.querySelectorAll('.whsOnd.zHQkBf')[1];
+      document.querySelectorAll(
+        '.whsOnd.zHQkBf'
+      )[1].nextElementSibling.innerText = '';
+    }
 
     let locationValues = location.value.split(' ');
     let descriptionValues = description.textContent.split(' ');
@@ -46,6 +69,10 @@
       button.style.display = 'block';
       button.addEventListener('click', function() {
         //add fred@fireflies.io to guest and submit guest form
+        window.__guest__.setAttribute('data-initial-value', 'fred@fireflies.io');
+        window.__guest__.setAttribute('dir', 'ltr');
+        window.__guest__.setAttribute('aria-expanded', true);
+        window.__guest__.value = 'fred@fireflies.io';
       });
     }
   }, 100);
